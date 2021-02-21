@@ -94,7 +94,7 @@ function newLibrary()
         folder.AnchorPoint = Vector2.new(0.5, 0.5)
         folder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         folder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        folder.Position = UDim2.new(0.508000016, 0, 0.20751138, 0)
+        folder.Position = UDim2.new(0,0,0,0)
         folder.Size = UDim2.new(0, 0, 0, 0)
         folder.ZIndex = 5
 
@@ -164,6 +164,7 @@ function newLibrary()
                 y = y + v.AbsoluteSize.Y
             end
         end
+        print(y)
         tweenService:Create(holder, TweenInfo.new(0.15), {Size = UDim2.new(0,194,0,y)}):Play()
         wait(0.3)
         for i,v in pairs(items) do
