@@ -77,6 +77,8 @@ function newLibrary()
 
 
     function util:CreateFolderTab(folderName, items)
+        local y = 0
+
         local folder = util:Create('Frame', {Name = "Folder", Parent = gui, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(255, 255, 255), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.515999973, 0, 0.291036427, 0), Size = UDim2.new(0, 196, 0, 21), ZIndex = 1})
         local titleHolder = util:Create('Frame', {Name = "TitleHolder", Parent = folder, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(36, 36, 36), BorderColor3 = Color3.fromRGB(0, 0, 0), BorderSizePixel = 0, Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 196, 0, 21), ZIndex = 1})
         local title = util:Create('TextLabel', {
@@ -86,7 +88,14 @@ function newLibrary()
             }),
         })
         local background = util:Create('Frame', {Name = "Background", Parent = titleHolder, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(0, 0, 0), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.5, 0, 8.34000015, 0), Selectable = true, Size = UDim2.new(0, 194, 0, 306)})
-        local holder = util:Create('Frame', {Name = "Holder", Parent = background, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(49, 49, 49), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 194, 0, 306)})
+        local holder = util:Create('Frame', {
+            Name = "Holder", Parent = background, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(49, 49, 49), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 194, 0, 306),
+            util:Create('UIListLayout', {Parent = holder, HorizontalAlignment = Enum.HorizontalAlignment.Center, SortOrder = Enum.SortOrder.LayoutOrder, Padding = UDim.new(0, -3)})
+        })
+        
+        for i,v in pairs(items) do
+            v.Parent = holder
+        end
     end
 
     function util:SetFolderTitle(folder, text)
