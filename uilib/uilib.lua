@@ -184,6 +184,21 @@ function newLibrary()
         sliderName.TextStrokeTransparency = 0.500
         sliderName.TextXAlignment = Enum.TextXAlignment.Left
 
+        sliderValue.Name = "SliderValue"
+        sliderValue.Parent = slider
+        sliderValue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        sliderValue.BackgroundTransparency = 1.000
+        sliderValue.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        sliderValue.BorderSizePixel = 0
+        sliderValue.Position = UDim2.new(0.0198204294, 0, -0.00545440661, 0)
+        sliderValue.Size = UDim2.new(0, 178, 0, 24)
+        sliderValue.Font = Enum.Font.Gotham
+        sliderValue.Text = maxValue
+        sliderValue.TextColor3 = Color3.fromRGB(255, 255, 255)
+        sliderValue.TextSize = 14.000
+        sliderValue.TextStrokeTransparency = 0.500
+        sliderValue.TextXAlignment = Enum.TextXAlignment.Right
+
         sliderFill.Name = "SliderFill"
         sliderFill.Parent = slider
         sliderFill.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
