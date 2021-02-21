@@ -82,10 +82,11 @@ function newLibrary()
         local title = util:Create('TextLabel', {
             Name = "Title", Parent = titleHolder, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(53, 53, 53), BorderSizePixel = 0, Size = UDim2.new(0, 195, 0, 21), Font = Enum.Font.GothamBold, Text = folderName, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14.000, TextStrokeTransparency = 0.500, TextWrapped = true,
             util:Create('UIGradient', {
-                Parent = titleHolder, Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(200, 200, 200)), ColorSequenceKeypoint.new(0.51, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(200, 200, 200))}, Rotation = -90
+                Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(200, 200, 200)), ColorSequenceKeypoint.new(0.51, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(200, 200, 200))}, Rotation = -90
             })
         })
         local background = util:Create('Frame', {Name = "Background", Parent = titleHolder, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(0, 0, 0), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.5, 0, 8.34000015, 0), Selectable = true, Size = UDim2.new(0, 194, 0, 306)})
+        local holder = util:Create('Frame', {Name = "Holder", Parent = background, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(49, 49, 49), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 194, 0, 306)})
     end
 
     function util:SetFolderTitle(folder, text)
