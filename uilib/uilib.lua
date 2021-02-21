@@ -154,7 +154,7 @@ function newLibrary()
         button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         button.BackgroundTransparency = 1.000
         button.Position = UDim2.new(0.913102031, 0, 0.287999988, 0)
-        button.Rotation = 0
+        button.Rotation = 180
         button.Size = UDim2.new(0, 10, 0, 8)
         button.ZIndex = 5
         button.Image = "rbxassetid://6419093692"
@@ -165,7 +165,7 @@ function newLibrary()
 
         button.MouseButton1Click:Connect(function()
             if holder.BackgroundTransparency == 0 then
-                tweenService:Create(button, TweenInfo.new(0.15), {Rotation = 180}):Play()
+                tweenService:Create(button, TweenInfo.new(0.15), {Rotation = 0}):Play()
                 for i,v in pairs(holder:GetDescendants()) do
                     if v.ClassName == 'TextLabel' then
                         tweenService:Create(v, TweenInfo.new(0.3), {TextTransparency = 1}):Play()
@@ -180,7 +180,7 @@ function newLibrary()
                 wait(0.15)	
                 holder.BackgroundTransparency = 1
             else
-                tweenService:Create(button, TweenInfo.new(0.15), {Rotation = 0}):Play()
+                tweenService:Create(button, TweenInfo.new(0.15), {Rotation = 180}):Play()
                 holder.BackgroundTransparency = 0	
 
                 tweenService:Create(holder, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0,194,0,306)}):Play()
