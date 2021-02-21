@@ -84,7 +84,6 @@ function newLibrary()
         local titleHolder = Instance.new("Frame")
         local title = Instance.new("TextLabel")
         local uiGradient = Instance.new("UIGradient")
-        local background = Instance.new("Frame")
         local holder = Instance.new("Frame")
         local uiListLayout = Instance.new("UIListLayout")
         local button = Instance.new("ImageButton")
@@ -94,8 +93,8 @@ function newLibrary()
         folder.AnchorPoint = Vector2.new(0.5, 0.5)
         folder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         folder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        folder.Position = UDim2.new({0.077, 0},{0.027, 0})
-        folder.Size = UDim2.new(0, 0, 0, 0)
+        folder.Position = UDim2.new({0.081, 0},{0.028, 0})
+        folder.Size = UDim2.new({0, 196},{0, 21})
         folder.ZIndex = 5
 
         titleHolder.Name = "TitleHolder"
@@ -126,22 +125,12 @@ function newLibrary()
         uiGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(200, 200, 200)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(200, 200, 200))}
         uiGradient.Rotation = 90
 
-        background.Name = "Background"
-        background.Parent = titleHolder
-        background.AnchorPoint = Vector2.new(0.5, 0.5)
-        background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-        background.BackgroundTransparency = 1.000
-        background.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        background.Position = UDim2.new({0.5, 0},{7.667, 0})
-        background.Selectable = true
-        background.Size = UDim2.new(0, 194, 0, 306)
-
         holder.Name = "Holder"
-        holder.Parent = background
-        holder.AnchorPoint = Vector2.new(0, 0)
+        holder.Parent = titleHolder
+        holder.AnchorPoint = Vector2.new(0.5, 0.5)
         holder.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
         holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        holder.Position = UDim2.new(0, 0,0.003, 0)
+        holder.Position = UDim2.new({0.5, 0},{9.667, 0})
         holder.Size = UDim2.new(0, 194, 0, 0)
 
         uiListLayout.Parent = holder
