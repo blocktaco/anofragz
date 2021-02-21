@@ -161,8 +161,8 @@ function newLibrary()
         
         for i,v in pairs(items) do
             v.Parent = holder
-            print(v.AbsolutePosition.Y)
-            y = y + v.AbsolutePosition.Y
+            print(v.AbsoluteSize.Y)
+            y = y + v.AbsoluteSize.Y
         end
         print(y)
         holder.Size = UDim2.new(0, 196, 0, y)
