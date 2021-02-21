@@ -125,7 +125,7 @@ function newLibrary()
         uiGradient.Rotation = 90
 
         background.Name = "Background"
-        background.Parent = titleFolder
+        background.Parent = titleHolder
         background.AnchorPoint = Vector2.new(0.5, 0.5)
         background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         background.BackgroundTransparency = 1.000
