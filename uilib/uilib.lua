@@ -166,7 +166,7 @@ function newLibrary()
         button.MouseButton1Click:Connect(function()
             if holder.BackgroundTransparency == 0 then
                 tweenService:Create(button, TweenInfo.new(0.15), {Rotation = 0}):Play()
-                for i,v in pairs(script.Parent:GetDescendants()) do
+                for i,v in pairs(holder:GetDescendants()) do
                     if v.ClassName == 'TextLabel' then
                         tweenService:Create(v, TweenInfo.new(0.3), {TextTransparency = 1}):Play()
                     elseif v.ClassName == 'TextButton' or v.ClassName == 'TextBox' or (v.ClassName == 'Frame' and v.Parent.Name == 'Slider' or v.Parent.Parent.Name == 'Slider') or (v.ClassName == 'Frame' and v.Parent.Name == 'Choice') or (v.ClassName == 'Frame' and v.Name == 'SubFolder') then
@@ -185,7 +185,7 @@ function newLibrary()
 
                 tweenService:Create(script.Parent, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0,194,0,306)}):Play()
                 wait(0.2)
-                for i,v in pairs(script.Parent:GetDescendants()) do
+                for i,v in pairs(holder:GetDescendants()) do
                     if v.ClassName == 'TextLabel' then
                         tweenService:Create(v, TweenInfo.new(0.3), {TextTransparency = 0}):Play()
                     elseif v.ClassName == 'TextButton' or v.ClassName == 'TextBox' or (v.ClassName == 'Frame' and v.Parent.Name == 'Slider' or v.Parent.Parent.Name == 'Slider') or (v.ClassName == 'Frame' and v.Parent.Name == 'Choice') or (v.ClassName == 'Frame' and v.Name == 'SubFolder') then
