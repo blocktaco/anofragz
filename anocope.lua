@@ -173,9 +173,9 @@ function newLibrary()
     function util:CreateToggle(toggleName, canBeBinded, callbackFunc)
         local state = false
 
-        local toggle = util:Create('Frame', {Name = "Toggle", Parent = holder, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, Position = UDim2.new(0.0360360369, 0, 0.0349650383, 0), Size = UDim2.new(0, 205, 0, 22)})
-        local toggleButton = util:Create('TextButton', {Name = "ToggleButton", Parent = toggle, BackgroundColor3 = Color3.fromRGB(36, 36, 36), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.00487804879, 0, 0.13636364, 0), Size = UDim2.new(0, 15, 0, 15), Font = Enum.Font.SourceSans, Text = "", TextColor3 = Color3.fromRGB(0, 0, 0), TextSize = 14.000})
-        local toggleName = util:Create('TextLabel', {Name = "ToggleName", Parent = toggle, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(0, 0, 0), BorderSizePixel = 0, Position = UDim2.new(0.126829267, 0, 0, 0), Size = UDim2.new(0, 179, 0, 22), Font = Enum.Font.Code, Text = toggleName, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14.000, TextStrokeTransparency = 0.000, TextXAlignment = Enum.TextXAlignment.Left})
+        local toggle = util:Create('Frame', {Name = "Toggle", BackgroundColor3 = Color3.fromRGB(18, 18, 18), BackgroundTransparency = 1.000, BorderSizePixel = 0, Position = UDim2.new(0.036842104, 0, 0, 0), Size = UDim2.new(0, 186, 0, 25)})
+        local toggleButton = util:Create('TextButton', {Name = "ToggleButton", Parent = Toggle, BackgroundColor3 = Color3.fromRGB(255, 0, 4), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.895687044, 0, 0.176363647, 0), Size = UDim2.new(0, 15, 0, 15), Font = Enum.Font.SourceSans, Text = "", TextColor3 = Color3.fromRGB(0, 0, 0), TextSize = 14.000})
+        local toggleName = util:Create('TextLabel', {Name = "ToggleName", Parent = toggle, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(0, 0, 0), BorderSizePixel = 0, Position = UDim2.new(0.0198204294, 0, -0.00545440661, 0), Size = UDim2.new(0, 178, 0, 24), Font = Enum.Font.Gotham, Text = toggleName, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14.000, TextStrokeTransparency = 0.500, TextXAlignment = Enum.TextXAlignment.Left})
     
         toggleButton.MouseButton1Click:Connect(function()
             if toggleButton.BackgroundColor3 == Color3.fromRGB(36, 36, 36) then toggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) else toggleButton.BackgroundColor3 = Color3.fromRGB(36, 36, 36) end
@@ -183,6 +183,8 @@ function newLibrary()
             state = not state
             callbackFunc(state)
         end)
+
+        return toggle
     end
 
     function util:CreateBox(boxName, callbackFunc)
