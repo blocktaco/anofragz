@@ -164,6 +164,7 @@ function newLibrary()
             print(v.AbsolutePosition.Y)
             y = y + v.AbsolutePosition.Y
         end
+        print(y)
         holder.Size = UDim2.new(0, 196, 0, y)
 
         util:Dragger(folder)
