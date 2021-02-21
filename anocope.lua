@@ -159,7 +159,7 @@ function newLibrary()
         local sliderName = Instance.new("TextLabel")
         local sliderValue = Instance.new("TextLabel")
         local sliderFill = Instance.new("Frame")
-        local uiGradient = Instance.new('uiGradient')
+        local uiGradient = Instance.new('UIGradient')
         local sliderBackground = Instance.new("Frame")
 
         slider.Name = "Slider"
