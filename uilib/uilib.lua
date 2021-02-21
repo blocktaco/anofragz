@@ -150,7 +150,7 @@ function newLibrary()
         uiListLayout.Padding = UDim.new(0, -3)
 
         button.Name = "Button"
-        button.Parent = titleFolder
+        button.Parent = titleHolder
         button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         button.BackgroundTransparency = 1.000
         button.Position = UDim2.new(0.913102031, 0, 0.287999988, 0)
