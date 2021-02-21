@@ -141,7 +141,7 @@ function newLibrary()
         holder.AnchorPoint = Vector2.new(0.5, 0.5)
         holder.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
         holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        holder.Position = UDim2.new(0, 0, 0, 0)
+        holder.Position = UDim2.new(0.5, 0, 0.5, 0)
         holder.Size = UDim2.new(0, 194, 0, 0)
 
         uiListLayout.Parent = holder
