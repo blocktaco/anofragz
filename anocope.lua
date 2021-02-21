@@ -163,7 +163,6 @@ function newLibrary()
         local sliderBackground = Instance.new("Frame")
 
         slider.Name = "Slider"
-        slider.Parent = holder
         slider.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
         slider.BackgroundTransparency = 1.000
         slider.BorderSizePixel = 0
