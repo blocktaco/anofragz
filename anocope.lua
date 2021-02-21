@@ -228,6 +228,8 @@ function newLibrary()
                 end)
             end
         end)
+
+        return slider
     end
 
     function util:CreateChoice(dropdownName, dropdownItems, callbackFunc)
