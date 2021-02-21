@@ -73,6 +73,7 @@ function newLibrary()
     local gui = Instance.new('ScreenGui')
     gui.Parent = game.CoreGui
     gui.Name = generateString(20)
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 
     function util:CreateFolderTab(folderName, items)
