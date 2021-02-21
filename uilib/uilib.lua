@@ -163,7 +163,7 @@ function newLibrary()
             v.Parent = holder
         end
 
-        util:Dragger(holder)
+        util:Dragger(folder)
 
         button.MouseButton1Click:Connect(function()
             if holder.BackgroundTransparency == 0 then
