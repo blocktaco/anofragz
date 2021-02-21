@@ -132,16 +132,16 @@ function newLibrary()
         background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         background.BackgroundTransparency = 1.000
         background.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        background.Position = UDim2.new(0.5, 0, 8.34000015, 0)
+        background.Position = UDim2.new({0.5, 0},{7.667, 0})
         background.Selectable = true
         background.Size = UDim2.new(0, 194, 0, 306)
 
         holder.Name = "Holder"
         holder.Parent = background
-        holder.AnchorPoint = Vector2.new(0.5, 0.5)
+        holder.AnchorPoint = Vector2.new(0, 0)
         holder.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
         holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        holder.Position = UDim2.new(0.5, 0, 0.5, 0)
+        holder.Position = UDim2.new({0, 0},{0.003, 0})
         holder.Size = UDim2.new(0, 194, 0, 0)
 
         uiListLayout.Parent = holder
@@ -161,13 +161,10 @@ function newLibrary()
         
         for i,v in pairs(items) do
             if v.ClassName ~= 'UIListLayout' then
-                y = y + v.AbsoluteSize.Y
+                holder.Size += UDim2.new(0,0,0,v.AbsoluteSize.Y)
                 v.Parent = holder
-                print(y)
             end
         end
-        print(y)
-        holder.Size += UDim2.new(0,0,0,y)
 
         util:Dragger(folder)
 
