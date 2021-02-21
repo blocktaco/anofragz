@@ -162,15 +162,11 @@ function newLibrary()
         for i,v in pairs(items) do
             if v.ClassName ~= 'UIListLayout' then
                 y = y + v.AbsoluteSize.Y
+                v.Parent = holder
                 print(y)
             end
         end
         print(y)
-        tweenService:Create(holder, TweenInfo.new(0.15), {Size = UDim2.new(0,194,0,y)}):Play()
-        wait(0.3)
-        for i,v in pairs(items) do
-            v.Parent = holder
-        end
 
         util:Dragger(folder)
 
