@@ -79,10 +79,8 @@ function newLibrary()
     function util:CreateFolderTab(folderName, items)
         local folder = util:Create('Frame', {Name = "Folder", Parent = gui, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(255, 255, 255), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.515999973, 0, 0.291036427, 0), Size = UDim2.new(0, 196, 0, 21), ZIndex = 1})
         local titleHolder = util:Create('Frame', {Name = "TitleHolder", Parent = folder, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(36, 36, 36), BorderColor3 = Color3.fromRGB(0, 0, 0), BorderSizePixel = 0, Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 196, 0, 21), ZIndex = 1})
-        local title = util:Create('TextLabel', {
-            Name = "Title", Parent = titleHolder, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(53, 53, 53), BorderSizePixel = 0, Size = UDim2.new(0, 195, 0, 21), Font = Enum.Font.GothamBold, Text = folderName, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14.000, TextStrokeTransparency = 0.500, TextWrapped = true,
-            util:Create('UIGradient', {Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(200, 200, 200)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(200, 200, 200))}, Rotation = -90})
-        })
+        local title = util:Create('TextLabel', {Name = "Title", Parent = titleHolder, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(53, 53, 53), BorderSizePixel = 0, Size = UDim2.new(0, 195, 0, 21), Font = Enum.Font.GothamBold, Text = folderName, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14.000, TextStrokeTransparency = 0.500, TextWrapped = true})
+        local uiGradient = util:Create('UIGradient', {Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(200, 200, 200)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(200, 200, 200))}, Rotation = -90, Parent = titleHolder})
     end
 
 
