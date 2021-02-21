@@ -96,18 +96,18 @@ function newLibrary()
         folder.Size = UDim2.new(0, 196, 0, 21)
         folder.ZIndex = 5
 
-        titleFolder.Name = "TitleFolder"
-        titleFolder.Parent = folder
-        titleFolder.AnchorPoint = Vector2.new(0.5, 0.5)
-        titleFolder.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-        titleFolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        titleFolder.BorderSizePixel = 0
-        titleFolder.Position = UDim2.new(0.5, 0, 0.5, 0)
-        titleFolder.Size = UDim2.new(0, 196, 0, 21)
-        titleFolder.ZIndex = 4
+        titleHolder.Name = "TitleHolder"
+        titleHolder.Parent = folder
+        titleHolder.AnchorPoint = Vector2.new(0.5, 0.5)
+        titleHolder.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+        titleHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        titleHolder.BorderSizePixel = 0
+        titleHolder.Position = UDim2.new(0.5, 0, 0.5, 0)
+        titleHolder.Size = UDim2.new(0, 196, 0, 21)
+        titleHolder.ZIndex = 4
 
         title.Name = "Title"
-        title.Parent = titleFolder
+        title.Parent = titleHolder
         title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         title.BackgroundTransparency = 1.000
         title.BorderColor3 = Color3.fromRGB(53, 53, 53)
@@ -150,10 +150,6 @@ function newLibrary()
         for i,v in pairs(items) do
             v.Parent = holder
         end
-    end
-
-    function util:SetFolderTitle(folder, text)
-        folder.TitleHolder.Title.Text = text
     end
 
     function util:CreateSlider(name, minValue, maxValue, callbackFunc)
