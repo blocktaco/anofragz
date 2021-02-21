@@ -141,7 +141,7 @@ function newLibrary()
         holder.AnchorPoint = Vector2.new(0, 0)
         holder.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
         holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        holder.Position = UDim2.new({0, 0},{0.003, 0})
+        holder.Position = UDim2.new(0, 0,0.003, 0)
         holder.Size = UDim2.new(0, 194, 0, 0)
 
         uiListLayout.Parent = holder
@@ -161,7 +161,7 @@ function newLibrary()
         
         for i,v in pairs(items) do
             if v.ClassName ~= 'UIListLayout' then
-                holder.Size += UDim2.new(0,0,0,v.AbsoluteSize.Y)
+                --holder.Size += UDim2.new(0,0,0,v.AbsoluteSize.Y)
                 v.Parent = holder
             end
         end
