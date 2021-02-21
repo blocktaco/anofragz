@@ -142,7 +142,7 @@ function newLibrary()
         holder.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
         holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
         holder.Position = UDim2.new(0.5, 0, 0.5, 0)
-        holder.Size = UDim2.new(0, 194, 0, 0)
+        holder.Size = UDim2.new(0, 194, 0, 306)
 
         uiListLayout.Parent = holder
         uiListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -160,8 +160,9 @@ function newLibrary()
         button.Image = "rbxassetid://6419093692"
         
         for i,v in pairs(items) do
-            if not v.ClassName == 'UIListLayout' then
+            if v.ClassName ~= 'UIListLayout' then
                 y = y + v.AbsoluteSize.Y
+                print(y)
             end
         end
         print(y)
