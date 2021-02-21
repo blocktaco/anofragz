@@ -94,7 +94,7 @@ function newLibrary()
         folder.AnchorPoint = Vector2.new(0.5, 0.5)
         folder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         folder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        folder.Position = UDim2.new(0.508000016, 0, 0.20751138, 0)
+        folder.Position = UDim2.new({0.077, 0},{0.027, 0})
         folder.Size = UDim2.new(0, 0, 0, 0)
         folder.ZIndex = 5
 
