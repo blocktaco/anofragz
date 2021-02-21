@@ -95,7 +95,7 @@ function newLibrary()
         folder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         folder.BorderColor3 = Color3.fromRGB(0, 0, 0)
         folder.Position = UDim2.new(0.508000016, 0, 0.20751138, 0)
-        folder.Size = UDim2.new(0, 196, 0, 21)
+        folder.Size = UDim2.new(0, 0, 0, 0)
         folder.ZIndex = 5
 
         titleHolder.Name = "TitleHolder"
@@ -160,13 +160,13 @@ function newLibrary()
         button.Image = "rbxassetid://6419093692"
         
         for i,v in pairs(items) do
-            v.Parent = holder
-            print(v.AbsoluteSize.Y)
             y = y + v.AbsoluteSize.Y
         end
-        print(y)
-        holder.Size = UDim2.new(0, 196, 0, y)
-        holder.Position = UDim2.new(0.5,0,0.5,0)
+        tweenService:Create(holder, TweenInfo.new(0.15), {Size = UDim2.new(0,194,0,y)})
+        wait(0.3)
+        for i,v in pairs(items) do
+            v.Parent = holder
+        end
 
         util:Dragger(folder)
 
