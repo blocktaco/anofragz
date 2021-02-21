@@ -1,6 +1,7 @@
 function newLibrary()
     local userInputService = game:GetService('UserInputService')
     local runService = game:GetService('RunService')
+    local tweenService = game:GetService('TweenService')
 
     local player = game.Players.LocalPlayer
 
@@ -86,6 +87,7 @@ function newLibrary()
         local background = Instance.new("Frame")
         local holder = Instance.new("Frame")
         local uiListLayout = Instance.new("UIListLayout")
+        local button = Instance.new("ImageButton")
 
         folder.Name = "Folder"
         folder.Parent = gui
@@ -146,10 +148,58 @@ function newLibrary()
         uiListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
         uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
         uiListLayout.Padding = UDim.new(0, -3)
+
+        button.Name = "Button"
+        button.Parent = titleFolder
+        button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        button.BackgroundTransparency = 1.000
+        button.Position = UDim2.new(0.913102031, 0, 0.287999988, 0)
+        button.Rotation = 180.000
+        button.Size = UDim2.new(0, 10, 0, 8)
+        button.ZIndex = 5
+        button.Image = "rbxassetid://6419093692"
         
         for i,v in pairs(items) do
             v.Parent = holder
         end
+
+        button.MouseButton1Click:Connect(function()
+            if holder.BackgroundTransparency == 0 then
+                tweenService:Create(button, TweenInfo.new(0.15), {Rotation = 0}):Play()
+                for i,v in pairs(script.Parent:GetDescendants()) do
+                    if v.ClassName == 'TextLabel' then
+                        tweenService:Create(v, TweenInfo.new(0.3), {TextTransparency = 1}):Play()
+                    elseif v.ClassName == 'TextButton' or v.ClassName == 'TextBox' or (v.ClassName == 'Frame' and v.Parent.Name == 'Slider' or v.Parent.Parent.Name == 'Slider') or (v.ClassName == 'Frame' and v.Parent.Name == 'Choice') or (v.ClassName == 'Frame' and v.Name == 'SubFolder') then
+                        tweenService:Create(v, TweenInfo.new(0.3), {BackgroundTransparency = 1}):Play()
+                    elseif v.ClassName == 'ImageLabel' then
+                        tweenService:Create(v, TweenInfo.new(0.3), {ImageTransparency = 1}):Play()
+                    end
+                end
+                wait(0.35)
+                tweenService:Create(script.Parent, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0, 0), Size = UDim2.new(0,194,0,0)}):Play()
+                wait(0.15)	
+                holder.BackgroundTransparency = 1
+            else
+                tweenService:Create(button, TweenInfo.new(0.15), {Rotation = 180}):Play()
+                holder.BackgroundTransparency = 0	
+
+                tweenService:Create(script.Parent, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0,194,0,306)}):Play()
+                wait(0.2)
+                for i,v in pairs(script.Parent:GetDescendants()) do
+                    if v.ClassName == 'TextLabel' then
+                        tweenService:Create(v, TweenInfo.new(0.3), {TextTransparency = 0}):Play()
+                    elseif v.ClassName == 'TextButton' or v.ClassName == 'TextBox' or (v.ClassName == 'Frame' and v.Parent.Name == 'Slider' or v.Parent.Parent.Name == 'Slider') or (v.ClassName == 'Frame' and v.Parent.Name == 'Choice') or (v.ClassName == 'Frame' and v.Name == 'SubFolder') then
+                        tweenService:Create(v, TweenInfo.new(0.3), {BackgroundTransparency = 0}):Play()
+                    elseif v.ClassName == 'ImageLabel' then
+                        tweenService:Create(v, TweenInfo.new(0.3), {ImageTransparency = 0}):Play()
+                    end
+                end
+            end
+        end)
+    end
+
+    function util:CreateSubFolder(name, items)
+        
     end
 
     function util:CreateSlider(name, minValue, maxValue, callbackFunc)
