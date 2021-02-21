@@ -79,19 +79,73 @@ function newLibrary()
     function util:CreateFolderTab(folderName, items)
         local y = 0
 
-        local folder = util:Create('Frame', {Name = "Folder", Parent = gui, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(255, 255, 255), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.515999973, 0, 0.291036427, 0), Size = UDim2.new(0, 196, 0, 21), ZIndex = 1})
-        local titleHolder = util:Create('Frame', {Name = "TitleHolder", Parent = folder, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(36, 36, 36), BorderColor3 = Color3.fromRGB(0, 0, 0), BorderSizePixel = 0, Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 196, 0, 21), ZIndex = 1})
-        local title = util:Create('TextLabel', {Name = "Title", Parent = titleHolder, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(53, 53, 53), BorderSizePixel = 0, Size = UDim2.new(0, 195, 0, 21), Font = Enum.Font.GothamBold, Text = folderName, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14.000, TextStrokeTransparency = 0.500, TextWrapped = true})
-        local uiGradient = Instance.new('UIGradient')
+        local folder = Instance.new("Frame")
+        local titleFolder = Instance.new("Frame")
+        local title = Instance.new("TextLabel")
+        local uiGradient = Instance.new("UIGradient")
+        local background = Instance.new("Frame")
+        local holder = Instance.new("Frame")
+        local uiListLayout = Instance.new("UIListLayout")
+
+        folder.Name = "Folder"
+        folder.Parent = ScreenGui
+        folder.AnchorPoint = Vector2.new(0.5, 0.5)
+        folder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        folder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        folder.Position = UDim2.new(0.508000016, 0, 0.20751138, 0)
+        folder.Size = UDim2.new(0, 196, 0, 21)
+        folder.ZIndex = 5
+
+        titleFolder.Name = "TitleFolder"
+        titleFolder.Parent = folder
+        titleFolder.AnchorPoint = Vector2.new(0.5, 0.5)
+        titleFolder.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+        titleFolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        titleFolder.BorderSizePixel = 0
+        titleFolder.Position = UDim2.new(0.5, 0, 0.5, 0)
+        titleFolder.Size = UDim2.new(0, 196, 0, 21)
+        titleFolder.ZIndex = 4
+
+        title.Name = "Title"
+        title.Parent = titleFolder
+        title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        title.BackgroundTransparency = 1.000
+        title.BorderColor3 = Color3.fromRGB(53, 53, 53)
+        title.BorderSizePixel = 0
+        title.Size = UDim2.new(0, 195, 0, 21)
+        title.Font = Enum.Font.GothamBold
+        title.Text = folderName
+        title.TextColor3 = Color3.fromRGB(255, 255, 255)
+        title.TextSize = 14.000
+        title.TextStrokeTransparency = 0.500
+        title.TextWrapped = true
+
         uiGradient.Parent = titleHolder
         uiGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(200, 200, 200)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(200, 200, 200))}
         uiGradient.Rotation = 90
 
-        local background = util:Create('Frame', {Name = "Background", Parent = titleHolder, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(0, 0, 0), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.5, 0, 8.34000015, 0), Selectable = true, Size = UDim2.new(0, 194, 0, 306)})
-        local holder = util:Create('Frame', {
-            Name = "Holder", Parent = background, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(49, 49, 49), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0, 194, 0, 306),
-            util:Create('UIListLayout', {Parent = holder, HorizontalAlignment = Enum.HorizontalAlignment.Center, SortOrder = Enum.SortOrder.LayoutOrder, Padding = UDim.new(0, -3)})
-        })
+        background.Name = "Background"
+        background.Parent = titleFolder
+        background.AnchorPoint = Vector2.new(0.5, 0.5)
+        background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        background.BackgroundTransparency = 1.000
+        background.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        background.Position = UDim2.new(0.5, 0, 8.34000015, 0)
+        background.Selectable = true
+        background.Size = UDim2.new(0, 194, 0, 306)
+
+        holder.Name = "Holder"
+        holder.Parent = background
+        holder.AnchorPoint = Vector2.new(0.5, 0.5)
+        holder.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+        holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        holder.Position = UDim2.new(0.5, 0, 0.5, 0)
+        holder.Size = UDim2.new(0, 194, 0, 306)
+
+        uiListLayout.Parent = holder
+        uiListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        uiListLayout.Padding = UDim.new(0, -3)
         
         for i,v in pairs(items) do
             v.Parent = holder
@@ -102,16 +156,59 @@ function newLibrary()
         folder.TitleHolder.Title.Text = text
     end
 
-    function util:CreateSlider(sliderName, minValue, maxValue, callbackFunc)
+    function util:CreateSlider(name, minValue, maxValue, callbackFunc)
         local state = false
 
-        local slider = util:Create('Frame', {Name = "Slider", Parent = holder, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, Position = UDim2.new(0, 0, 2.4545455, 0), Size = UDim2.new(0, 205, 0, 45)})
-        local sliderName = util:Create('TextLabel', {Name = "SliderName", Parent = slider, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(0, 0, 0), BorderSizePixel = 0, Position = UDim2.new(0.00563875539, 0, 0, 0), Size = UDim2.new(0, 203, 0, 22), Font = Enum.Font.Code, Text = sliderName, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14.000, TextStrokeTransparency = 0.000, TextXAlignment = Enum.TextXAlignment.Left})
-        local sliderValue = util:Create('TextLabel', {Name = "SliderValue", Parent = slider, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(0, 0, 0), BorderSizePixel = 0, Position = UDim2.new(0.00563875539, 0, 0, 0), Size = UDim2.new(0, 203, 0, 22), Font = Enum.Font.Code, Text = maxValue.."%", TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14.000, TextStrokeTransparency = 0.000, TextXAlignment = Enum.TextXAlignment.Right})
-    
-        local backgroundHolder = util:Create('Frame', {Parent = slider, BackgroundColor3 = Color3.fromRGB(52, 52, 52), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.00563875539, 0, 0.627855778, 0), Size = UDim2.new(0, 203, 0, 16)})
-        local fill = util:Create('Frame', {Parent = backgroundHolder, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BorderSizePixel = 0, Position = UDim2.new(0,0,0,0), Size = UDim2.new(0, 203, 0, 16)})
-    
+        local slider = Instance.new("Frame")
+        local sliderName = Instance.new("TextLabel")
+        local sliderValue = Instance.new("TextLabel")
+        local sliderFill = Instance.new("Frame")
+        local uiGradient = Instance.new('uiGradient')
+        local sliderBackground = Instance.new("Frame")
+
+        slider.Name = "Slider"
+        slider.Parent = holder
+        slider.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+        slider.BackgroundTransparency = 1.000
+        slider.BorderSizePixel = 0
+        slider.Position = UDim2.new(0.0206185561, 0, 0.071895428, 0)
+        slider.Size = UDim2.new(0, 186, 0, 48)
+
+        sliderName.Name = "SliderName"
+        sliderName.Parent = slider
+        sliderName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        sliderName.BackgroundTransparency = 1.000
+        sliderName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        sliderName.BorderSizePixel = 0
+        sliderName.Position = UDim2.new(0.0199999996, 0, 0.0399999991, 0)
+        sliderName.Size = UDim2.new(0, 178, 0, 24)
+        sliderName.Font = Enum.Font.Gotham
+        sliderName.Text = name
+        sliderName.TextColor3 = Color3.fromRGB(255, 255, 255)
+        sliderName.TextSize = 14.000
+        sliderName.TextStrokeTransparency = 0.500
+        sliderName.TextXAlignment = Enum.TextXAlignment.Left
+
+        sliderFill.Name = "SliderFill"
+        sliderFill.Parent = slider
+        sliderFill.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+        sliderFill.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        sliderFill.Position = UDim2.new(0.0250000004, 0, 0.529999971, 0)
+        sliderFill.Size = UDim2.new(0, 177, 0, 15)
+        sliderFill.ZIndex = 2
+
+        uiGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(86, 86, 86)), ColorSequenceKeypoint.new(0.34, Color3.fromRGB(125, 125, 125)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(163, 163, 163)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+        uiGradient.Rotation = -90
+        uiGradient.Parent = sliderFill
+
+        sliderBackground.Name = "SliderBackground"
+        sliderBackground.Parent = slider
+        sliderBackground.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+        sliderBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        sliderBackground.Position = UDim2.new(0.0250000004, 0, 0.529999971, 0)
+        sliderBackground.Size = UDim2.new(0, 177, 0, 15)
+
+
         local connection
         userInputService.InputEnded:Connect(function(input)
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -119,18 +216,18 @@ function newLibrary()
             end
         end)
 
-        backgroundHolder.InputBegan:Connect(function(input)
+        sliderBackground.InputBegan:Connect(function(input)
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
                 if connection then connection:Disconnect() end
 
                 connection = runService.Heartbeat:Connect(function()
                     local mouse = userInputService:GetMouseLocation()
-                    local percent = math.clamp((mouse.X - backgroundHolder.AbsolutePosition.X) / (backgroundHolder.AbsoluteSize.X), 0, 1)
+                    local percent = math.clamp((mouse.X - sliderBackground.AbsolutePosition.X) / (sliderBackground.AbsoluteSize.X), 0, 1)
                     local Value = math.floor(minValue + (maxValue - minValue) * percent)
 
                     Value = tonumber(string.format("%.2f", Value))
 
-                    fill.Size = UDim2.new(percent, 0, 1, 0)
+                    sliderFill.Size = UDim2.new(percent, 0, 1, 0)
                     sliderValue.Text = tostring(Value)
                     callbackFunc(Value)
                 end)
