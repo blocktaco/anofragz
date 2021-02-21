@@ -213,7 +213,7 @@ function newLibrary()
         sliderFill.Name = "SliderFill"
         sliderFill.Parent = sliderBackground
         sliderFill.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
-        sliderFill.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        sliderFill.BorderSizePixel = 0
         sliderFill.Position = UDim2.new(0, 0, 0, 0)
         sliderFill.Size = UDim2.new(0, 177, 0, 15)
         sliderFill.ZIndex = 2
