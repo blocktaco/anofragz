@@ -97,18 +97,18 @@ function newLibrary()
         folder.Size = UDim2.new(0, 196, 0, 21)
         folder.ZIndex = 5
 
-        titleFolder.Name = "TitleFolder"
-        titleFolder.Parent = folder
-        titleFolder.AnchorPoint = Vector2.new(0.5, 0.5)
-        titleFolder.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-        titleFolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        titleFolder.BorderSizePixel = 0
-        titleFolder.Position = UDim2.new(0.5, 0, 0.5, 0)
-        titleFolder.Size = UDim2.new(0, 196, 0, 21)
-        titleFolder.ZIndex = 4
+        titleHolder.Name = "TitleHolder"
+        titleHolder.Parent = folder
+        titleHolder.AnchorPoint = Vector2.new(0.5, 0.5)
+        titleHolder.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+        titleHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        titleHolder.BorderSizePixel = 0
+        titleHolder.Position = UDim2.new(0.5, 0, 0.5, 0)
+        titleHolder.Size = UDim2.new(0, 196, 0, 21)
+        titleHolder.ZIndex = 4
 
         title.Name = "Title"
-        title.Parent = titleFolder
+        title.Parent = titleHolder
         title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         title.BackgroundTransparency = 1.000
         title.BorderColor3 = Color3.fromRGB(53, 53, 53)
@@ -126,7 +126,7 @@ function newLibrary()
         uiGradient.Rotation = 90
 
         holder.Name = "Holder"
-        holder.Parent = titleFolder
+        holder.Parent = titleHolder
         holder.AnchorPoint = Vector2.new(0.5, 0.5)
         holder.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
         holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -140,7 +140,7 @@ function newLibrary()
         uiListLayout.Padding = UDim.new(0, -3)
 
         button.Name = "Button"
-        button.Parent = titleFolder
+        button.Parent = titleHolder
         button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         button.BackgroundTransparency = 1.000
         button.Position = UDim2.new(0.925000012, 0, 0.287999988, 0)
