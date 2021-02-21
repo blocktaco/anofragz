@@ -88,7 +88,7 @@ function newLibrary()
         local uiListLayout = Instance.new("UIListLayout")
 
         folder.Name = "Folder"
-        folder.Parent = ScreenGui
+        folder.Parent = gui
         folder.AnchorPoint = Vector2.new(0.5, 0.5)
         folder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         folder.BorderColor3 = Color3.fromRGB(0, 0, 0)
