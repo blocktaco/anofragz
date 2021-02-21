@@ -142,7 +142,7 @@ function newLibrary()
         holder.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
         holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
         holder.Position = UDim2.new(0.5, 0, 0.5, 0)
-        holder.Size = UDim2.new(0, 194, 0, 306)
+        holder.Size = UDim2.new(0, 194, 0, 0)
 
         uiListLayout.Parent = holder
         uiListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -160,9 +160,11 @@ function newLibrary()
         button.Image = "rbxassetid://6419093692"
         
         for i,v in pairs(items) do
-            y = y + v.AbsoluteSize.Y
+            if not v.ClassName == 'UIListLayout' then
+                y = y + v.AbsoluteSize.Y
+            end
         end
-        tweenService:Create(holder, TweenInfo.new(0.15), {Size = UDim2.new(0,194,0,y)})
+        tweenService:Create(holder, TweenInfo.new(0.15), {Size = UDim2.new(0,194,0,y)}):Play()
         wait(0.3)
         for i,v in pairs(items) do
             v.Parent = holder
