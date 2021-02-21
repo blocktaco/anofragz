@@ -199,14 +199,6 @@ function newLibrary()
         sliderValue.TextStrokeTransparency = 0.500
         sliderValue.TextXAlignment = Enum.TextXAlignment.Right
 
-        sliderFill.Name = "SliderFill"
-        sliderFill.Parent = slider
-        sliderFill.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
-        sliderFill.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        sliderFill.Position = UDim2.new(0.0250000004, 0, 0.529999971, 0)
-        sliderFill.Size = UDim2.new(0, 177, 0, 15)
-        sliderFill.ZIndex = 2
-
         uiGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(86, 86, 86)), ColorSequenceKeypoint.new(0.34, Color3.fromRGB(125, 125, 125)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(163, 163, 163)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
         uiGradient.Rotation = -90
         uiGradient.Parent = sliderFill
@@ -217,6 +209,14 @@ function newLibrary()
         sliderBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
         sliderBackground.Position = UDim2.new(0.0250000004, 0, 0.529999971, 0)
         sliderBackground.Size = UDim2.new(0, 177, 0, 15)
+
+        sliderFill.Name = "SliderFill"
+        sliderFill.Parent = sliderBackground
+        sliderFill.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+        sliderFill.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        sliderFill.Position = UDim2.new(0, 0, 0, 0)
+        sliderFill.Size = UDim2.new(0, 177, 0, 15)
+        sliderFill.ZIndex = 2
 
 
         local connection
