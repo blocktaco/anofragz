@@ -80,7 +80,7 @@ function newLibrary()
         local y = 0
 
         local folder = Instance.new("Frame")
-        local titleFolder = Instance.new("Frame")
+        local titleHolder = Instance.new("Frame")
         local title = Instance.new("TextLabel")
         local uiGradient = Instance.new("UIGradient")
         local background = Instance.new("Frame")
