@@ -171,14 +171,14 @@ function newLibrary()
                     end
                 end
                 wait(0.35)
-                tweenService:Create(holder, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0, 0), Size = UDim2.new(0,194,0,0)}):Play()
+                tweenService:Create(holder, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0.994, 0), Size = UDim2.new(0,194,0,0)}):Play()
                 wait(0.15)	
                 holder.BackgroundTransparency = 1
             else
                 tweenService:Create(button, TweenInfo.new(0.15), {Rotation = 180}):Play()
                 holder.BackgroundTransparency = 0	
 
-                tweenService:Create(holder, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0,194,0,306)}):Play()
+                tweenService:Create(holder, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0.5, 0), Size = UDim2.new(0,194,0,365)}):Play()
                 wait(0.2)
                 for i,v in pairs(holder:GetDescendants()) do
                     if v.ClassName == 'TextLabel' then
