@@ -85,8 +85,8 @@ function newLibrary()
                 Parent = titleHolder, Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(200, 200, 200)), ColorSequenceKeypoint.new(0.51, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(200, 200, 200))}, Rotation = -90
             })
         })
+        local background = util:Create('Frame', {Name = "Background", Parent = titleHolder, AnchorPoint = Vector2.new(0.5, 0.5), BackgroundColor3 = Color3.fromRGB(0, 0, 0), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.5, 0, 8.34000015, 0), Selectable = true, Size = UDim2.new(0, 194, 0, 306)})
     end
-
 
     function util:SetFolderTitle(folder, text)
         folder.TitleHolder.Title.Text = text
