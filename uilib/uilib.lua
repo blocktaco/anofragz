@@ -6,6 +6,7 @@ function newLibrary()
     local player = game.Players.LocalPlayer
 
     local util = {}
+    local mainColor = Color3.new(1, 0, 0.45)
 
     local function generateString(length)
         local str = {}
@@ -270,7 +271,7 @@ function newLibrary()
 
         sliderFill.Name = "SliderFill"
         sliderFill.Parent = sliderBackground
-        sliderFill.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+        sliderFill.BackgroundColor3 = mainColor
         sliderFill.BorderColor3 = Color3.fromRGB(0, 0, 0)
         sliderFill.Size = UDim2.new(0, 177, 0, 15)
         sliderFill.ZIndex = 2
@@ -367,7 +368,7 @@ function newLibrary()
 
         toggleButton.Name = "ToggleButton"
         toggleButton.Parent = toggle
-        toggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+        toggleButton.BackgroundColor3 = mainColor
         toggleButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
         toggleButton.Position = UDim2.new(0.895687044, 0, 0.176363647, 0)
         toggleButton.Size = UDim2.new(0, 15, 0, 15)
