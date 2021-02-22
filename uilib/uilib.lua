@@ -335,7 +335,7 @@ function newLibrary()
         end
     end
 
-    function util:CreateToggle(toggleName, canBeBinded, callbackFunc)
+    function util:CreateToggle(name, canBeBinded, callbackFunc)
         local state = false
 
         local toggle = Instance.new("Frame")
@@ -359,7 +359,7 @@ function newLibrary()
         toggleName.Position = UDim2.new(0.0198204294, 0, -0.00545440661, 0)
         toggleName.Size = UDim2.new(0, 178, 0, 24)
         toggleName.Font = Enum.Font.Code
-        toggleName.Text = toggleName
+        toggleName.Text = name
         toggleName.TextColor3 = Color3.fromRGB(255, 255, 255)
         toggleName.TextSize = 14.000
         toggleName.TextStrokeTransparency = 0.500
