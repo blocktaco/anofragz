@@ -78,22 +78,22 @@ function newLibrary()
 
 
     function util:CreateFolderTab(folderName, items)
-        local y = 0
-
         local folder = Instance.new("Frame")
         local titleHolder = Instance.new("Frame")
         local title = Instance.new("TextLabel")
         local uiGradient = Instance.new("UIGradient")
         local holder = Instance.new("Frame")
+        local actionsHolder = Instance.new('ScrollingFrame')
         local uiListLayout = Instance.new("UIListLayout")
         local button = Instance.new("ImageButton")
 
-        folder.Name = "Folder"
+        folder.Name = "folder"
         folder.Parent = gui
         folder.AnchorPoint = Vector2.new(0.5, 0.5)
         folder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         folder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        folder.Position = UDim2.new(0.0810908973, 0, 0.028072834, 0)
+        folder.BorderSizePixel = 0
+        folder.Position = UDim2.new(0.075000003, 0, 0.0250000004, 0)
         folder.Size = UDim2.new(0, 196, 0, 21)
         folder.ZIndex = 5
 
@@ -114,7 +114,7 @@ function newLibrary()
         title.BorderColor3 = Color3.fromRGB(53, 53, 53)
         title.BorderSizePixel = 0
         title.Size = UDim2.new(0, 195, 0, 21)
-        title.Font = Enum.Font.GothamBold
+        title.Font = Enum.Font.Code
         title.Text = folderName
         title.TextColor3 = Color3.fromRGB(255, 255, 255)
         title.TextSize = 14.000
@@ -130,9 +130,20 @@ function newLibrary()
         holder.AnchorPoint = Vector2.new(0.5, 0.5)
         holder.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
         holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-        holder.Position = UDim2.new(0.5, 0, 9.66666698, 0)
+        holder.BorderSizePixel = 0
+        holder.Position = UDim2.new(0.5, 0, 9.85999966, 0)
         holder.Selectable = true
         holder.Size = UDim2.new(0, 196, 0, 0)
+
+        actionsHolder.Name = "ActionsHolder"
+        actionsHolder.Parent = holder
+        actionsHolder.Active = true
+        actionsHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        actionsHolder.BackgroundTransparency = 1.000
+        actionsHolder.BorderSizePixel = 0
+        actionsHolder.Size = UDim2.new(0, 196, 0, 372)
+        actionsHolder.CanvasSize = UDim2.new(0, 0, 0, 0)
+        actionsHolder.ScrollBarThickness = 0
 
         uiListLayout.Parent = holder
         uiListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -158,7 +169,7 @@ function newLibrary()
 
         util:Dragger(folder)
 
-        button.MouseButton1Click:Connect(function()
+        --[[button.MouseButton1Click:Connect(function()
             if holder.BackgroundTransparency == 0 then
                 tweenService:Create(button, TweenInfo.new(0.15), {Rotation = 0}):Play()
                 for i,v in pairs(holder:GetDescendants()) do
@@ -190,7 +201,9 @@ function newLibrary()
                     end
                 end
             end
-        end)
+        end)]]
+
+        return folder
     end
 
     function util:CreateSubFolder(name, items)
