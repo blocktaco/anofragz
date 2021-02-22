@@ -236,7 +236,7 @@ function newLibrary()
         sliderName.Position = UDim2.new(0.0199999996, 0, 0.0399999991, 0)
         sliderName.Size = UDim2.new(0, 178, 0, 24)
         sliderName.Font = Enum.Font.Code
-        sliderName.Text = name
+        sliderName.Text = "Slider"
         sliderName.TextColor3 = Color3.fromRGB(255, 255, 255)
         sliderName.TextSize = 14.000
         sliderName.TextStrokeTransparency = 0.500
@@ -248,10 +248,10 @@ function newLibrary()
         sliderValue.BackgroundTransparency = 1.000
         sliderValue.BorderColor3 = Color3.fromRGB(0, 0, 0)
         sliderValue.BorderSizePixel = 0
-        sliderValue.Position = UDim2.new(0.0198204294, 0, -0.00545440661, 0)
+        sliderValue.Position = UDim2.new(0.0198204294, 0, 0.0362122618, 0)
         sliderValue.Size = UDim2.new(0, 178, 0, 24)
         sliderValue.Font = Enum.Font.Code
-        sliderValue.Text = maxValue
+        sliderValue.Text = "Value"
         sliderValue.TextColor3 = Color3.fromRGB(255, 255, 255)
         sliderValue.TextSize = 14.000
         sliderValue.TextStrokeTransparency = 0.500
@@ -271,11 +271,9 @@ function newLibrary()
         sliderFill.Name = "SliderFill"
         sliderFill.Parent = sliderBackground
         sliderFill.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
-        sliderFill.BorderSizePixel = 0
-        sliderFill.Position = UDim2.new(0, 0, 0, 0)
+        sliderFill.BorderColor3 = Color3.fromRGB(0, 0, 0)
         sliderFill.Size = UDim2.new(0, 177, 0, 15)
         sliderFill.ZIndex = 2
-
 
         local connection
         userInputService.InputEnded:Connect(function(input)
@@ -340,9 +338,47 @@ function newLibrary()
     function util:CreateToggle(toggleName, canBeBinded, callbackFunc)
         local state = false
 
-        local toggle = util:Create('Frame', {Name = "Toggle", BackgroundColor3 = Color3.fromRGB(18, 18, 18), BackgroundTransparency = 1.000, BorderSizePixel = 0, Position = UDim2.new(0.036842104, 0, 0, 0), Size = UDim2.new(0, 186, 0, 25)})
-        local toggleButton = util:Create('TextButton', {Name = "ToggleButton", Parent = toggle, BackgroundColor3 = Color3.fromRGB(255, 0, 4), BorderColor3 = Color3.fromRGB(0, 0, 0), Position = UDim2.new(0.895687044, 0, 0.176363647, 0), Size = UDim2.new(0, 15, 0, 15), Font = Enum.Font.Code, Text = "", TextColor3 = Color3.fromRGB(0, 0, 0), TextSize = 14.000})
-        local toggleName = util:Create('TextLabel', {Name = "ToggleName", Parent = toggle, BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 1.000, BorderColor3 = Color3.fromRGB(0, 0, 0), BorderSizePixel = 0, Position = UDim2.new(0.0198204294, 0, -0.00545440661, 0), Size = UDim2.new(0, 178, 0, 24), Font = Enum.Font.Code, Text = toggleName, TextColor3 = Color3.fromRGB(255, 255, 255), TextSize = 14.000, TextStrokeTransparency = 0.500, TextXAlignment = Enum.TextXAlignment.Left})
+        local toggle = Instance.new("Frame")
+        local toggleName = Instance.new("TextLabel")
+        local toggleButton = Instance.new("TextButton")
+        local uiGradient = Instance.new("UIGradient")
+
+        toggle.Name = "Toggle"
+        toggle.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+        toggle.BackgroundTransparency = 1.000
+        toggle.BorderSizePixel = 0
+        toggle.Position = UDim2.new(0.036842104, 0, 0, 0)
+        toggle.Size = UDim2.new(0, 186, 0, 25)
+
+        toggleName.Name = "ToggleName"
+        toggleName.Parent = toggle
+        toggleName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        toggleName.BackgroundTransparency = 1.000
+        toggleName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        toggleName.BorderSizePixel = 0
+        toggleName.Position = UDim2.new(0.0198204294, 0, -0.00545440661, 0)
+        toggleName.Size = UDim2.new(0, 178, 0, 24)
+        toggleName.Font = Enum.Font.Code
+        toggleName.Text = toggleName
+        toggleName.TextColor3 = Color3.fromRGB(255, 255, 255)
+        toggleName.TextSize = 14.000
+        toggleName.TextStrokeTransparency = 0.500
+        toggleName.TextXAlignment = Enum.TextXAlignment.Left
+
+        toggleButton.Name = "ToggleButton"
+        toggleButton.Parent = toggle
+        toggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+        toggleButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        toggleButton.Position = UDim2.new(0.895687044, 0, 0.176363647, 0)
+        toggleButton.Size = UDim2.new(0, 15, 0, 15)
+        toggleButton.Font = Enum.Font.SourceSans
+        toggleButton.Text = ""
+        toggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+        toggleButton.TextSize = 14.000
+
+        UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(66, 66, 66)), ColorSequenceKeypoint.new(0.87, Color3.fromRGB(171, 171, 171)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+        UIGradient_2.Rotation = -45
+        UIGradient_2.Parent = toggleButton
     
         toggleButton.MouseButton1Click:Connect(function()
             if toggleButton.BackgroundColor3 == Color3.fromRGB(36, 36, 36) then toggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) else toggleButton.BackgroundColor3 = Color3.fromRGB(36, 36, 36) end
