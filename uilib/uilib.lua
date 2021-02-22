@@ -376,9 +376,9 @@ function newLibrary()
         toggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
         toggleButton.TextSize = 14.000
 
-        UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(66, 66, 66)), ColorSequenceKeypoint.new(0.87, Color3.fromRGB(171, 171, 171)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-        UIGradient_2.Rotation = -45
-        UIGradient_2.Parent = toggleButton
+        uiGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(66, 66, 66)), ColorSequenceKeypoint.new(0.87, Color3.fromRGB(171, 171, 171)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+        uiGradient.Rotation = -45
+        uiGradient.Parent = toggleButton
     
         toggleButton.MouseButton1Click:Connect(function()
             if toggleButton.BackgroundColor3 == Color3.fromRGB(36, 36, 36) then toggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) else toggleButton.BackgroundColor3 = Color3.fromRGB(36, 36, 36) end
