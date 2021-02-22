@@ -145,7 +145,7 @@ function newLibrary()
         actionsHolder.CanvasSize = UDim2.new(0, 0, 0, 0)
         actionsHolder.ScrollBarThickness = 0
 
-        uiListLayout.Parent = holder
+        uiListLayout.Parent = actionsHolder
         uiListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
         uiListLayout.SortOrder = Enum.SortOrder.LayoutOrder
         uiListLayout.Padding = UDim.new(0, -3)
